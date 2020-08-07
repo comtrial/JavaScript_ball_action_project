@@ -26,7 +26,7 @@ class App {
         this.nball = 60;
 
         for (let i = 0; i < this.nball; i++) {
-            this.ball[i] = new Ball(this.stageWidth, this.stageHeight, 15, this.block);
+            this.ball[i] = new Ball(this.stageWidth, this.stageHeight, 20, this.block);
             this.ball[i].setVelocityRandom(12, 20).setColorRandom();
         };
 
