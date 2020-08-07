@@ -4,21 +4,17 @@ export class Block {
         this.height = height;
         this.x = x;
         this.y = y;
+        this.maxX = x + width;
+        this.maxY = y + height;
     }
 
     draw(context) {
-        // context.beginPath();
-        // context.rect(this.x, this.y, this.width, -this.height);
-        // context.fillStyle = rgb(18, 45, 58);
-        // context.fill();
-        // context.closePath();
-
+        context.strokeStyle = 'rgb(18, 45, 58)';
         context.beginPath();
+        context.rect(this.x, this.y, this.width, this.height);
+        context.stroke();
         context.fillStyle = '#ff384e';
-        context.font = '150px sans-serif';
-        context.fillText("please", this.x, this.y);
-        context.fill();
-
-
+        context.font = '100px sans-serif';
+        context.fillText("Don't touch me!", this.x, this.y + this.height);
     }
 }

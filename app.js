@@ -16,19 +16,21 @@ class App {
         window.addEventListener('resize', this.resize.bind(this), false);
         this.resize();
 
-        //ball
-        this.ball = [];
-        this.nball = 10;
-
-
-        for (let i = 0; i < this.nball; i++) {
-            this.ball[i] = new Ball(this.stageWidth, this.stageHeight, 30, 15);
-            this.ball[i].setVelocityRandom(12, 50).setColorRandom();
-        };
 
         //Text Rect
 
-        this.block = new Block(400, 100, 100, 200);
+        this.block = new Block(670, 80, 200, 200);
+
+        //ball
+        this.ball = [];
+        this.nball = 60;
+
+        for (let i = 0; i < this.nball; i++) {
+            this.ball[i] = new Ball(this.stageWidth, this.stageHeight, 15, this.block);
+            this.ball[i].setVelocityRandom(12, 20).setColorRandom();
+        };
+
+
 
 
         window.requestAnimationFrame(this.animate.bind(this));
@@ -52,7 +54,7 @@ class App {
         this.block.draw(this.ctx);
         //draw ball
         for (let i = 0; i < this.nball; i++) {
-            this.ball[i].draw(this.ctx, this.stageWidth, this.stageHeight);
+            this.ball[i].draw(this.ctx, this.stageWidth, this.stageHeight, this.block);
         }
 
 
