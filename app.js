@@ -23,10 +23,10 @@ class App {
 
         //ball
         this.ball = [];
-        this.nball = 60;
+        this.nball = 40;
 
         for (let i = 0; i < this.nball; i++) {
-            this.ball[i] = new Ball(this.stageWidth, this.stageHeight, 20, this.block);
+            this.ball[i] = new Ball(this.stageWidth, this.stageHeight, 25, this.block);
             this.ball[i].setVelocityRandom(12, 20).setColorRandom();
         };
 
